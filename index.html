@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modern Browser Game</title>
+    <!-- Include CSS and other head elements -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Include Google Fonts and Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Game Container -->
+    <div id="game-container">
+        <!-- Game Area -->
+        <div id="game-area">
+            <!-- Canvas for the game -->
+            <canvas id="gameCanvas"></canvas>
+            <!-- Initial Countdown Overlay -->
+            <div id="initial-countdown" style="display: none;">
+                <div id="countdown-number"></div>
+            </div>
+            <!-- Player Selection Overlay -->
+            <div id="player-selection">
+                <h1>Select Your Player</h1>
+                <div class="player-options">
+                    <!-- Player Option Boxes -->
+                    <div class="player-box" onclick="selectPlayer(0)" style="background-color: #E74C3C;">
+                        <h2>1</h2>
+                        <p>Height: <span id="player1-height"></span></p>
+                        <p>Speed: <span id="player1-speed"></span></p>
+                        <p>Jump: <span id="player1-jump"></span></p>
+                    </div>
+                    <div class="player-box" onclick="selectPlayer(1)" style="background-color: #3498DB;">
+                        <h2>2</h2>
+                        <p>Ύψος: <span id="player2-height"></span></p>
+                        <p>Ταχ: <span id="player2-speed"></span></p>
+                        <p>Άλμα: <span id="player2-jump"></span></p>
+                    </div>
+                    <div class="player-box" onclick="selectPlayer(2)" style="background-color: #2ECC71;">
+                        <h2>3</h2>
+                        <p>Height: <span id="player3-height"></span></p>
+                        <p>Speed: <span id="player3-speed"></span></p>
+                        <p>Jump: <span id="player3-jump"></span></p>
+                    </div>
+                    <div class="player-box" onclick="selectPlayer(3)" style="background-color: #F1C40F;">
+                        <h2>4</h2>
+                        <p>Height: <span id="player4-height"></span></p>
+                        <p>Speed: <span id="player4-speed"></span></p>
+                        <p>Jump: <span id="player4-jump"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar for Game Info -->
+        <div id="sidebar">
+            <div id="game-timer">Time left: <span id="time-left">60</span>s</div>
+            <div id="leaderboard">
+                <h2>Leaderboard</h2>
+                <ul id="score-list"></ul>
+            </div>
+            <!-- Pause Menu (hidden by default) -->
+            <div id="pause-menu" style="display: none;">
+                <h2>Game Paused</h2>
+                <button onclick="togglePause()">Resume</button>
+                <button onclick="toggleMusic()"><i class="fas fa-music"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio Files -->
+    <audio id="background-music" src="audio/background.mp3" loop></audio>
+    <audio id="jump-sound" src="audio/jump.mp3"></audio>
+    <audio id="hit-sound" src="audio/hit.mp3"></audio>
+    
+    <!-- Player Properties -->
+    <script>
+        const playerProperties = [
+            { color: '#E74C3C', height: 50, speed: 5, jumpPower: 12 }, // Red
+            { color: '#3498DB', height: 60, speed: 4, jumpPower: 10 }, // Blue
+            { color: '#2ECC71', height: 40, speed: 6, jumpPower: 14 }, // Green
+            { color: '#F1C40F', height: 55, speed: 5, jumpPower: 11 }, // Yellow
+        ];
+    </script>
+    
+    <!-- Include your scripts at the end of the body -->
+    <script src="js/player.js"></script>
+    <script src="js/aiPlayer.js"></script>
+    <script src="js/ball.js"></script>
+    <script src="js/box.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
