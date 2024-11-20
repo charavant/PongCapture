@@ -1,5 +1,3 @@
-// main.js
-
 // Declare playerIndex at the top
 let playerIndex = null;
 

@@ -1,4 +1,4 @@
-# Modern Browser Game
+# Browser Game : PongCapture
 
 ## Table of Contents
 - Introduction
